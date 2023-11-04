@@ -29,6 +29,7 @@ $(function () {
       console.log(hourId);
       var userInput = $(`.${hourId}`).val();
       localStorage.setItem(`${hourId}-event`, userInput);
+      $(".confirmation").text(`New event: ${userInput} saved to LocalStorage`);
     })});
 
   for (var i = 9; i < 18; i++) {
@@ -38,4 +39,7 @@ $(function () {
     $(`.${hourBlock}`).text(hourEvent);
   };
 
+  if (dayjs().format("HH:mm") === "00:00") {
+    localStorage.clear();
+  }
 });
