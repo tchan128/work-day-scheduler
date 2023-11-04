@@ -1,29 +1,41 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+
+var hourPrefix = "#hour-";
+
 $(function () {
+
   $("#currentDay").text(dayjs().format("dddd, MMMM D"));
-
-  // $(".saveBtn").on("click", function() {
-
-  // });
-
-  var hourPrefix = "#hour-";
 
   for (var i = 9; i < 18; i++) {
     var hourBlock = hourPrefix + i.toString();
-    var hour = (hourBlock.split("-"))[1]
-    if (hour < dayjs().format("H")) {
+    var hour = Number((hourBlock.split("-"))[1])
+    console.log(typeof(dayjs().format("H")));
+    if (hour < Number(dayjs().format("H"))) {
       $(hourBlock).removeClass("past present future");
       $(hourBlock).addClass("past");
-    } else if (hour === dayjs().format("H")) {
+      $("textarea").prop("disabled", true);
+    } else if (hour === Number(dayjs().format("H"))) {
       $(hourBlock).removeClass("past present future");
       $(hourBlock).addClass("present");
-    } else {
+      $("textarea").prop("disabled", false);
+    } else if (hour > Number(dayjs().format("H"))) {
       $(hourBlock).removeClass("past present future");
       $(hourBlock).addClass("future");
+      $("textarea").prop("disabled", false);
     }
   };
+
+  $(document).ready(function(){
+    $('.saveBtn').click(function(event){
+      var hourId = event.target.id;
+      console.log(hourId);
+      var userInput = $(`.${hourId}`).val();
+      localStorage.setItem(`${hourId}-event`, userInput);
+    })});
+
+  
 
 
   // TODO: Add a listener for click events on the save button. This code should
