@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-    <a href="https://github.com/tchan128/work-day-scheduler"><img src="./Assets/Scheduler.png" alt="Logo" width="80" height="80"></a>
+    <a href="https://github.com/tchan128/work-day-scheduler"><img src="Scheduler.png" alt="Logo" width="80" height="80"></a>
     <h3 align="center">Work Day Scheduler</h3>
     <p align="center">
         The motivation for this project is to build upon pre-existing source code to make a usable work day scheduler. I built this project because as an individual with many things going on during a work day, it is nice to a space to organize myself and my events/appointments. Having a space that allows me to keep myself organize and acts as a day tracker really helps me stay focus. Through this project, I learned how to use jQuery to easily change and modify different elements in the HTML. I also learned how to better use local storage. Lastly, I learned how to use different APIs. 
