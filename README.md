@@ -53,6 +53,7 @@ The starter code for this work day scheduler was from: https://github.com/coding
 In addition to that, some websites that helped with the build of this generator include:
 
 - Website that helped with extracting ID from click event: https://www.educba.com/jquery-get-id-of-clicked-element/
+- Day.js API: https://day.js.org/
 
 README icon is found here: https://www.flaticon.com/free-icon/schedule_3652191
 
